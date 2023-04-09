@@ -3,8 +3,10 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 20%);
+    padding: 1rem;
+    background-color: #eee;
+    box-shadow: 0 1px 5px 0 #7c7a7a;
+    position: fixed;
 }
 .nav h1{
     color: #454545;

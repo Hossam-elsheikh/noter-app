@@ -9,7 +9,9 @@ const MainPage = () => {
     <NavBar/>
     <div className={classes.content}>
     <SideBar/>
+    <div className={classes.outlet}>
     <Outlet/>
+    </div>
     </div>
     </div>
   )

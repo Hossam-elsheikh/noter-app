@@ -6,7 +6,7 @@
     border: none;
     padding:  .5rem .7rem;
     border-radius: 15px;
-    width: 15rem;
+    width: 10rem;
     transition: all .3s ease-in-out;
 }   
 
@@ -17,6 +17,6 @@
     color: #716D6D;
 }
 .search input:focus{
-    width:20rem;
+    width:15rem;
     transition: all .3s ease-in-out;
 }

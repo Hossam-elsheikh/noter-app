@@ -4,8 +4,8 @@ import classes from './NavBar.module.css'
 const NavBar = () => {
   return (
     <div className={classes.nav}>
-    <h1>خالد بيه </h1>
-    <SearchBar/>
+    <h1>Noter</h1>
+    <SearchBar txt='Search Notes'/>
     </div>
   )
 }
