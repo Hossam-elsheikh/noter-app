@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import MainPage from './pages/MainPage';
+import ErrorPage from './pages/ErrorPage';
+import NoterPage from './pages/NoterPage';
+import TaskerPage from './pages/TaskerPage';
+import ReminderPage from './pages/ReminderPage';
+function App(props) {
 
-function App() {
+  const router = createBrowserRouter([
+    {path:'/', element: <MainPage />, errorElement: <ErrorPage/>, children: [
+      {index: true, element: <NoterPage/>},
+      {path:'tasker', element: <TaskerPage/>},
+      {path:'reminder', element: <ReminderPage/>}
+    ] }
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RouterProvider router={router}>
+      {props.children}
+    </RouterProvider>
   );
 }
 

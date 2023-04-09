@@ -1,0 +1,22 @@
+.search{
+    position: relative;
+}
+.search input {
+    outline: none;
+    border: none;
+    padding:  .5rem .7rem;
+    border-radius: 15px;
+    width: 15rem;
+    transition: all .3s ease-in-out;
+}   
+
+.search label {
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+    color: #716D6D;
+}
+.search input:focus{
+    width:20rem;
+    transition: all .3s ease-in-out;
+}

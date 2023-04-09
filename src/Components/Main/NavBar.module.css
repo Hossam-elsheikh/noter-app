@@ -1,0 +1,9 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.nav h1{
+    color: #454545;
+}
