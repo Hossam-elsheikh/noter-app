@@ -1,5 +1,13 @@
 .cont{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.notes{
+    display: flex;
     width: 100%;
+    gap: 1rem;
+    flex-wrap: wrap;
 }

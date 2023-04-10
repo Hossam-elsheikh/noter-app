@@ -1,0 +1,8 @@
+.icons{
+    display: flex;
+    justify-content: flex-end;
+    gap: .2rem;
+}
+.icons *{
+    cursor: pointer;
+}

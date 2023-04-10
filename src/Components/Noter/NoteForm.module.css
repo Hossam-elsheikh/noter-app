@@ -1,4 +1,6 @@
-
+.form{
+    max-width: 400px;
+}
 .form form {
     display: flex;
     flex-direction: column;
@@ -24,7 +26,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-
+justify-content: space-between;
 }
 .btn button{
     border: none;

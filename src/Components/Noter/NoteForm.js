@@ -1,20 +1,53 @@
-import React, { useState } from 'react'
-import classes from './NoteForm.module.css'
-import { Form } from 'react-router-dom'
+import React, { useState } from "react";
+import classes from "./NoteForm.module.css";
+import { Form } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addNote } from "./notesSlice";
 const NoteForm = () => {
-    const [collapse, setcollapse] = useState(true)
+  const initialState = {
+    title: "",
+    note: "",
+  }
+  const noteId = Math.round(Math.random()*340)
+  const [collapse, setcollapse] = useState(true);
+  const [noteData, setNoteData] = useState(initialState);
+  const dispatch = useDispatch()
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    setcollapse(true);
+    dispatch(addNote({...noteData,id:noteId, note: noteData.note.length === 0 ? "Empty Note" : noteData.note}))
+    setNoteData(initialState)
+  };
   return (
     <div className={classes.form}>
-    <Form onSubmit={(e)=>{e.preventDefault();setcollapse(true)}}>
-        {!collapse && <input type='text' placeholder='Title'/>}
-        <textarea onFocus={()=>setcollapse(false)} placeholder='Take a note...' cols={collapse ? "40" : '5'} rows={collapse ? "1" : "10"}></textarea>
-       {!collapse &&  <div className={classes.btn}>
-        <input type='text' placeholder='Tag'/>
-        <button type='submit'>Save</button>
-        </div>}
-    </Form>
+      <Form onSubmit={onSubmitHandler}>
+        {!collapse && (
+          <input
+            type="text"
+            value={noteData.title}
+            placeholder="Title"
+            onChange={(e) =>
+              setNoteData({ ...noteData, title: e.target.value })
+            }
+          />
+        )}
+        <textarea
+          onFocus={() => setcollapse(false)}
+          placeholder="Take a note..."
+          cols={collapse ? "40" : "5"}
+          rows={collapse ? "1" : "10"}
+          value={noteData.note}
+          onChange={(e) => setNoteData({ ...noteData, note: e.target.value })}
+        ></textarea>
+        {!collapse && (
+          <div className={classes.btn}>
+            <input type="text" placeholder="Tag" />
+            <button type="submit">Save</button>
+          </div>
+        )}
+      </Form>
     </div>
-  )
-}
+  );
+};
 
-export default NoteForm
+export default NoteForm;
