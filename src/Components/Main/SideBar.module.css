@@ -29,3 +29,7 @@
 .tagicon {
     transform: rotate(45deg);
 }
+.tags li span{
+    font-size: .6rem;
+    color: gray;
+}

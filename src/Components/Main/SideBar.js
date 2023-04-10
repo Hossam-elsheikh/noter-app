@@ -43,7 +43,8 @@ const SideBar = () => {
         <div className={classes.tagicon}>
           <FontAwesomeIcon icon={faTag}/>
         </div>
-        {e.name}
+        {e.name} 
+      <span>{e.notesCount} </span>
       </li>)}
       <SearchBar txt='Search Tags' />
 
