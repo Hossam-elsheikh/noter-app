@@ -1,8 +1,11 @@
 import React from 'react'
+import Notes from '../Components/Noter/Notes'
 
 const NoterPage = () => {
   return (
-    <div>NoterPage</div>
+    <div>
+      <Notes/>
+    </div>
   )
 }
 

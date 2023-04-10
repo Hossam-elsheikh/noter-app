@@ -6,7 +6,7 @@
     height: 100vh;
     box-shadow: 1px 5px 5px 0 #7c7a7a;
     padding-top: 6rem;
-
+    min-width: 12rem;
 }
 
 .sidebar ul {
