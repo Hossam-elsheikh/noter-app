@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import ErrorPage from './pages/ErrorPage';
 import NoterPage from './pages/NoterPage';
-import TaskerPage from './pages/Taskerpage/TaskerPage';
+import TaskerPage from './pages/TaskerPage';
 import ReminderPage from './pages/ReminderPage';
 function App(props) {
 
