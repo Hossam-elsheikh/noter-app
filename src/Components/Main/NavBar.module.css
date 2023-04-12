@@ -5,6 +5,7 @@
     width: 100%;
     padding: 1rem;
     background-color: #eee;
-    box-shadow: 0 1px 5px 0 #7c7a7a;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.329);
     position: fixed;
+    z-index: 2;
 }

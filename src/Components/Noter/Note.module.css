@@ -6,7 +6,16 @@
 .icons *{
     cursor: pointer;
 }
+.txt {
+    overflow: hidden;
+text-overflow:ellipsis;
+
+}
 .txt *:focus{
     outline: none;
     border-bottom: 1px solid gray;
+  }
+  .txt p {
+    font-size: .8rem;
+    margin-top: .5rem;
   }

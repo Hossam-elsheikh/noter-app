@@ -1,8 +1,9 @@
 import React from 'react'
+import Container from '../UI/Container'
 
 const Remniders = () => {
   return (
-    <div>Remniders</div>
+    <Container>Remniders</Container>
   )
 }
 
