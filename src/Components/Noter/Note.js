@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { deleteNote } from "./notesSlice";
-import { editNote,editTitle } from "./notesSlice";
+import { editNote, editTitle } from "./notesSlice";
 import classes from "./Note.module.css";
-const Note = ({ title, note, id }) => { 
+/** */
+const Note = ({ title, note, id }) => {
   const dispatch = useDispatch();
   const deleteNoteHandler = () => {
     dispatch(deleteNote(id));
@@ -20,10 +21,11 @@ const Note = ({ title, note, id }) => {
       editNote({ id, note: e.currentTarget.textContent })
     );
   };
+
   return (
     <Card>
       <div className={classes.txt}>
-        <h3  contentEditable onBlur={onTitleChangeHandler}>
+        <h3 contentEditable onBlur={onTitleChangeHandler}>
           {title}
         </h3>
         <p

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState ={
-    notes:[{title:'note1',note:'this is my first note',id:'sam'}]
+    notes:[{title:'note1',note:'this is my first note',id:'sam'},{title:'note1',note:'this is my first note',id:'sam'},{title:'note1',note:'this is my first note',id:'sam'},{title:'note1',note:'this is my first note',id:'sam'},{title:'note1',note:'this is my first note',id:'sam'}]
 }
 
 export const notesSlice = createSlice({
