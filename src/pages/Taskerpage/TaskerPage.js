@@ -10,13 +10,18 @@ const TaskerPage = () => {
       id: 1,
       tasks: [
         {
-          title: "Buy groceries",
-          description: "Milk, bread, eggs, and cheese",
+          title: "Go for a run",
+          description: "Run for 30 minutes around the park",
           completed: false
         },
         {
-          title: "Cook dinner",
-          description: "Make spaghetti and meatballs",
+          title: "Attend a meeting",
+          description: "Attend the weekly team meeting at 10am",
+          completed: true
+        },
+        {
+          title: "Read a book",
+          description: "Read 'The Alchemist' by Paulo Coelho",
           completed: false
         }
       ]
@@ -25,20 +30,43 @@ const TaskerPage = () => {
       id: 2,
       tasks: [
         {
-          title: "Do laundry",
-          description: "Wash and fold clothes",
+          title: "Finish project",
+          description: "Complete the final touches on the project",
           completed: false
         },
         {
-          title: "Clean the house",
-          description: "Vacuum the floors and dust the shelves",
+          title: "Call parents",
+          description: "Call parents to check in and say hello",
           completed: true
+        },
+        {
+          title: "Buy a gift",
+          description: "Purchase a birthday gift for a friend",
+          completed: true
+        }
+      ]
+    },
+    {
+      id: 3,
+      tasks: [
+        {
+          title: "Go to the gym",
+          description: "Lift weights and do cardio for an hour",
+          completed: true
+        },
+        {
+          title: "Write a blog post",
+          description: "Write a blog post about a recent trip",
+          completed: false
         }
       ]
     }
   ];
   
-  const map= data.map((item)=> <TodoList data={item} />  )
+  const map= data.map((item)=> 
+  <TodoList key={item.id} data={item} /> 
+  
+  )
 
   return (
     <div className={classes.container}>

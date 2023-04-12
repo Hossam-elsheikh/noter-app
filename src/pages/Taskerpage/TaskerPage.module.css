@@ -2,14 +2,15 @@
   border: 2px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 2rem;
 }
 .notes {
-  /* border: 1px solid black; */
+  /* border: 3px solid green; */
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
+  width: 100%;
 }

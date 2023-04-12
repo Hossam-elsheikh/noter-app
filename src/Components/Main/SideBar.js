@@ -6,14 +6,20 @@ import classes from './SideBar.module.css'
 import SearchBar from '../UI/SearchBar'
 const SideBar = () => {
 
-  const tagsList =[{name:'python', notesCount: 20},{name:'cources', notesCount: 110},{name:'internships', notesCount: 8}]
+  const tagsList = [{ name: 'python', notesCount: 20 }, { name: 'cources', notesCount: 110 }, { name: 'internships', notesCount: 8 }]
+  
+   
+
+  
+  
+  
   return (
     <div className={classes.sidebar}>
       <ul>
         <li>
           <NavLink to='/'>
             <div>
-              <FontAwesomeIcon icon={faHouse}/>
+              <FontAwesomeIcon icon={faHouse} />
             </div>
             <h3>Noter</h3>
           </NavLink>
@@ -21,7 +27,7 @@ const SideBar = () => {
         <li>
           <NavLink to='tasker'>
             <div>
-              <FontAwesomeIcon icon={faCircleCheck}/>
+              <FontAwesomeIcon icon={faCircleCheck} />
             </div>
             <h3>Tasker</h3>
           </NavLink>
@@ -29,7 +35,7 @@ const SideBar = () => {
         <li>
           <NavLink to='reminder'>
             <div>
-              <FontAwesomeIcon icon={faCalendar}/>
+              <FontAwesomeIcon icon={faCalendar} />
             </div>
             <h3>Reminder</h3>
           </NavLink>
@@ -39,14 +45,18 @@ const SideBar = () => {
 
       {/* th below list will be mapped from the store later */}
       <ul className={classes.tags}>
-      {tagsList.map(e => <li>
-        <div className={classes.tagicon}>
-          <FontAwesomeIcon icon={faTag}/>
-        </div>
-        {e.name} 
-      <span>{e.notesCount} </span>
-      </li>)}
-      <SearchBar txt='Search Tags' />
+        {tagsList.map(e =>
+          
+          <li key={tagsList.indexOf(e)}>
+            <div className={classes.tagicon}>
+              <FontAwesomeIcon icon={faTag} />
+            </div>
+            {e.name}
+            <span>{e.notesCount} </span>
+          </li>)
+
+        }
+        <SearchBar txt='Search Tags' />
 
       </ul>
     </div>

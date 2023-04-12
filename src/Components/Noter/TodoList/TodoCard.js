@@ -1,10 +1,15 @@
 import React from 'react';
 import classes from './TodoCard.module.css';
 import Card from '../../UI/Card';
+import { useState } from 'react';
 const TodoCard = ({data}) => {
 
- console.log(data);
+  
+  const handel=()=>{
+   console.log(data);
 
+
+ }
  
  
     return (
@@ -12,13 +17,15 @@ const TodoCard = ({data}) => {
         <Card>
         {data.id} 
           {data.tasks.map((task)=>(
-            < >
+            
+             <li  key={data.tasks.indexOf(task)} >
+             <input type="checkbox"    checked={task.completed} onChange={handel}   />
              
-            <input type="checkbox"  checked={true}/>
-            <label for="vehicle1"> {task.title}</label>
+            <label htmlFor="vehicle1"> {task.title}</label>
+            </li>
             
             
-            </>
+
              ))}
 
             
