@@ -1,8 +1,11 @@
 import React from 'react'
+import Remniders from '../Components/Reminder/Remniders'
 
 const ReminderPage = () => {
   return (
-    <div>ReminderPage</div>
+    <div>
+      <Remniders/>
+    </div>
   )
 }
 
