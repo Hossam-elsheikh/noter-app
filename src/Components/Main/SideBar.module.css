@@ -26,6 +26,7 @@
     display: flex;
     align-items: center;
     gap: .7rem;
+    cursor: pointer;
 }
 .tagicon {
     transform: rotate(45deg);
@@ -35,3 +36,17 @@
     color: gray;
 }
 
+.clear{
+    border: none;
+    padding: .2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: .7rem;
+    background-color: rgb(22, 21, 21);
+    color: white;
+    transition: all .3s ease-in-out;
+}
+.clear:hover{
+    background-color: white;
+    color:  rgb(22, 21, 21);
+}

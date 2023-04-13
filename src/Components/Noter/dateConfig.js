@@ -16,6 +16,6 @@ const months = [
 
       const date = new Date();
       let month = months[date.getMonth()];
-   const currentDate = `${date.getDay()} ${month} ${date.getFullYear()}`;
+   const currentDate = `${date.getUTCDate()} ${month} ${date.getFullYear()}`;
     return currentDate
   }

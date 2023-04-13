@@ -10,9 +10,13 @@ import { NavLink } from "react-router-dom";
 import classes from "./SideBar.module.css";
 import SearchBar from "../UI/SearchBar";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setFilter } from "../Noter/notesSlice";
+import { clearFilter } from "../Noter/notesSlice";
 const SideBar = () => {
   const tagsList = useSelector((state) => state.notes.tags);
-
+  const filter = useSelector((state)=> state.notes.filter)
+  const dispatch = useDispatch()
   return (
     <div className={classes.sidebar}>
       <ul>
@@ -41,12 +45,14 @@ const SideBar = () => {
           </NavLink>
         </li>
       </ul>
-      <p>Tags</p>
+      <p>Tags </p>
 
       {/* th below list will be mapped from the store later */}
       <ul className={classes.tags}>
+      {filter.active && <button className={classes.clear} onClick={()=> dispatch(clearFilter())}>Clear Filter</button>}
+
         {tagsList.map((e) => (
-          <li key={tagsList.indexOf(e)}>
+          <li key={tagsList.indexOf(e)} onClick={()=> dispatch(setFilter(e.title))}>
             <div className={classes.tagicon}>
               <FontAwesomeIcon icon={faTag} />
             </div>
@@ -54,7 +60,7 @@ const SideBar = () => {
             <span>{e.count} </span>
           </li>
         ))}
-        <SearchBar txt="Search Tags" />
+        {/* <SearchBar txt="Search Tags" /> */}
       </ul>
     </div>
   );

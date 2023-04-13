@@ -3,6 +3,7 @@ import { dummyNotes } from "./DummyData";
 const initialState = {
   notes: dummyNotes,
   tags: [],
+  filter: {active: false, notes: []}
 };
 export const notesSlice = createSlice({
   name: "notes",
@@ -56,8 +57,15 @@ export const notesSlice = createSlice({
         title: action.payload.title,
       };
     },
+    setFilter: (state,action) =>{
+      state.filter.active = true;
+      state.filter.notes = state.notes.filter((n)=> n.tag === action.payload)
+    },
+    clearFilter : (state)=>{
+      state.filter.active = false
+    }
   },
 });
 
-export const { addNote, deleteNote, editNote, editTitle } = notesSlice.actions;
+export const { addNote, deleteNote, editNote, editTitle,setFilter,clearFilter } = notesSlice.actions;
 export default notesSlice.reducer;
