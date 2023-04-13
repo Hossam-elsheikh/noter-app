@@ -53,10 +53,14 @@ const SideBar = () => {
 
         {tagsList.map((e) => (
           <li key={tagsList.indexOf(e)} onClick={()=> dispatch(setFilter(e.title))}>
+            <div className={classes.tag}>
+
             <div className={classes.tagicon}>
               <FontAwesomeIcon icon={faTag} />
             </div>
+            
             {e.title}
+            </div>
             <span>{e.count} </span>
           </li>
         ))}

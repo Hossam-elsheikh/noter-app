@@ -25,11 +25,18 @@
 .tags li{
     display: flex;
     align-items: center;
-    gap: .7rem;
     cursor: pointer;
+    justify-content: space-between;
+}
+.tag{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+
 }
 .tagicon {
     transform: rotate(45deg);
+    margin-top: .2rem;
 }
 .tags li span{
     font-size: .6rem;

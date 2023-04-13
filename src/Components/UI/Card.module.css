@@ -17,7 +17,9 @@
 .card:focus-within{
     max-height: fit-content;
     transition: all .3s ease-in-out;
+    z-index: 3;
     border: 1px solid rgba(128, 128, 128, 0.438);
+
 }
 
 @keyframes popup {
