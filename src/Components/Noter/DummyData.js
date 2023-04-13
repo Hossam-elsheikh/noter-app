@@ -22,9 +22,6 @@ export const dummyNotes =[
     Associative arrays: "re basically objects in JavaScript where indexes are replaced by user defined keys. They do not have a length property like normal array and cannot be traversed using normal for loop."
     
     Function Borrowing : a way for an object to use the methods of another object without redefining that same method. In JavaScript, we can reuse the method of a function on a different object other than the object it was defined on.`, id: "sam2" },
-    { title: "note1", note: "this is my first note", id: "sam3" },
-    { title: "note1", note: "this is my first note", id: "sam4" },
-    { title: "note1", note: "this is my first note", id: "sam5" },
   ]
 export const colors = [
  

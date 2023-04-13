@@ -12,7 +12,7 @@ const Notes = () => {
     <div className={classes.cont}>
         <NoteForm/>
         <div className={classes.notes}>
-            {notes.map(e=> <Note title={e.title} note={e.note} key={e.id} id={e.id}/>)}
+            {notes.map(e=> <Note tag={e.tag} title={e.title} note={e.note} key={e.id} id={e.id}/>)}
         </div>
     </div>
     </Container>

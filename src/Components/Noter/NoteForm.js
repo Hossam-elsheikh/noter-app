@@ -7,6 +7,7 @@ const NoteForm = () => {
   const initialState = {
     title: "",
     note: "",
+    tag:''
   }
   const noteId = Math.round(Math.random()*340)
   const [collapse, setcollapse] = useState(true);
@@ -41,7 +42,7 @@ const NoteForm = () => {
         ></textarea>
         {!collapse && (
           <div className={classes.btn}>
-            <input type="text" placeholder="Tag" />
+            <input type="text" placeholder="Tag" onChange={(e) => setNoteData({ ...noteData, tag: e.target.value })}/>
             <button type="submit">Save</button>
           </div>
         )}

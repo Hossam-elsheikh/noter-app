@@ -1,21 +1,30 @@
-.icons{
-    display: flex;
-    justify-content: flex-end;
-    gap: .2rem;
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.2rem;
 }
-.icons *{
-    cursor: pointer;
+.icons * {
+  cursor: pointer;
 }
 .txt {
-    overflow: hidden;
-text-overflow:ellipsis;
-
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.txt *:focus{
-    outline: none;
-    border-bottom: 1px solid gray;
-  }
-  .txt p {
-    font-size: .8rem;
-    margin-top: .5rem;
-  }
+.txt *:focus {
+  outline: none;
+  border-bottom: 1px solid gray;
+}
+.txt p {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bottomTxt{
+    display: flex;
+    gap: .5rem;
+    font-size: .6rem;
+}
