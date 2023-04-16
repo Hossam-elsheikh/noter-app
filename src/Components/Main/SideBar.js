@@ -13,14 +13,19 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../Noter/notesSlice";
 import { clearFilter } from "../Noter/notesSlice";
+import { showSideBar } from "./SideBarSlice";
 const SideBar = () => {
   const tagsList = useSelector((state) => state.notes.tags);
-  const filter = useSelector((state)=> state.notes.filter)
-  const dispatch = useDispatch()
+  const sidebar = useSelector((state) => state.sideBar);
+  const filter = useSelector((state) => state.notes.filter);
+  const dispatch = useDispatch();
   return (
-    <div className={classes.sidebar}>
+    <div
+      className={classes.sidebar}
+      style={sidebar.isShown ? { display: "flex" } : null}
+    >
       <ul>
-        <li>
+        <li onClick={() => dispatch(showSideBar())}>
           <NavLink to="/">
             <div>
               <FontAwesomeIcon icon={faHouse} />
@@ -28,7 +33,7 @@ const SideBar = () => {
             <h3>Noter</h3>
           </NavLink>
         </li>
-        <li>
+        <li onClick={() => dispatch(showSideBar())}>
           <NavLink to="tasker">
             <div>
               <FontAwesomeIcon icon={faCircleCheck} />
@@ -36,7 +41,7 @@ const SideBar = () => {
             <h3>Tasker</h3>
           </NavLink>
         </li>
-        <li>
+        <li onClick={() => dispatch(showSideBar())}>
           <NavLink to="reminder">
             <div>
               <FontAwesomeIcon icon={faCalendar} />
@@ -47,19 +52,33 @@ const SideBar = () => {
       </ul>
       <p>Tags </p>
 
-      {/* th below list will be mapped from the store later */}
       <ul className={classes.tags}>
-      {filter.active && <button className={classes.clear} onClick={()=> dispatch(clearFilter())}>Clear Filter</button>}
+        {filter.active && (
+          <button
+            className={classes.clear}
+            onClick={() => {
+              dispatch(clearFilter());
+              dispatch(showSideBar());
+            }}
+          >
+            Clear Filter
+          </button>
+        )}
 
         {tagsList.map((e) => (
-          <li key={tagsList.indexOf(e)} onClick={()=> dispatch(setFilter(e.title))}>
+          <li
+            key={tagsList.indexOf(e)}
+            onClick={() => {
+              dispatch(setFilter(e.title));
+              dispatch(showSideBar());
+            }}
+          >
             <div className={classes.tag}>
+              <div className={classes.tagicon}>
+                <FontAwesomeIcon icon={faTag} />
+              </div>
 
-            <div className={classes.tagicon}>
-              <FontAwesomeIcon icon={faTag} />
-            </div>
-            
-            {e.title}
+              {e.title}
             </div>
             <span>{e.count} </span>
           </li>

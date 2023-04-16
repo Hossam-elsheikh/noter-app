@@ -7,5 +7,20 @@
     background-color: #eee;
     border-bottom: 1px solid rgba(128, 128, 128, 0.329);
     position: fixed;
-    z-index: 2;
+    z-index: 3;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.bars{
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width:667px) {
+    .bars {
+        display: flex;
+    }
 }

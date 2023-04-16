@@ -3,6 +3,9 @@
     flex-direction: column;
     width: 100%;
     gap: 1rem;
+    z-index: 0;
+    background-color: #eee;
+    height: 100vh;
 }
 .content {
     display: flex;
@@ -11,4 +14,5 @@
 .outlet {
     padding-top: 6rem;
     width: 100%;
+    position: relative;
 }
