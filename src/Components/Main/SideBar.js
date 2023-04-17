@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import classes from "./SideBar.module.css";
 import SearchBar from "../UI/SearchBar";
 import { useSelector } from "react-redux";
@@ -66,13 +66,15 @@ const SideBar = () => {
         )}
 
         {tagsList.map((e) => (
-          <li
+          <li 
             key={tagsList.indexOf(e)}
             onClick={() => {
               dispatch(setFilter(e.title));
               dispatch(showSideBar());
             }}
           >
+          <Link to='/'>
+
             <div className={classes.tag}>
               <div className={classes.tagicon}>
                 <FontAwesomeIcon icon={faTag} />
@@ -81,6 +83,7 @@ const SideBar = () => {
               {e.title}
             </div>
             <span>{e.count} </span>
+          </Link>
           </li>
         ))}
         {/* <SearchBar txt="Search Tags" /> */}

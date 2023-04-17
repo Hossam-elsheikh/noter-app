@@ -26,7 +26,7 @@ const NoteForm = () => {
     setNoteData(initialState);
   };
   return (
-    <div className={classes.form} style={collapse ? { width: "100%" } : null}>
+    <div className={classes.form} style={collapse ? { width: "100%" } : null} >
       <Form
         onSubmit={onSubmitHandler}
         style={collapse ? { borderRadius: "2rem" } : null}

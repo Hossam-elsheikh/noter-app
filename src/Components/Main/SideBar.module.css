@@ -62,5 +62,16 @@
 @media (max-width: 667px){
     .sidebar{
         display: none;
+        margin-left: -15rem;
+        animation: slideRight .3s ease-in-out forwards;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        margin-left: -15rem;
+    }
+    100% {
+        margin-left: 0;
     }
 }

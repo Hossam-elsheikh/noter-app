@@ -2,7 +2,7 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    padding: 2rem 2rem 2rem 15rem;
+    padding: 1rem 1rem 1rem 14rem;
 }
 
 @media (max-width: 667px){

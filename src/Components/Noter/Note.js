@@ -12,7 +12,8 @@ const Note = ({ title, note, id, tag }) => {
  
   const currentDate = configureDate()
   const deleteNoteHandler = () => {
-    dispatch(deleteNote(id));
+    const confirmDeletion = window.confirm(`do you want to delete ${title.trim().length !== 0 ? title : '"Untitled"'} note`)
+    if(confirmDeletion)dispatch(deleteNote(id));
   };
   const onTitleChangeHandler = (e) => {
     dispatch(editTitle({ id, title: e.currentTarget.textContent }));
