@@ -7,6 +7,8 @@
     padding-left: 2rem;
     border-radius: .5rem;
     position: relative;
+    background-color: white;
+
 }
 .memo h3 {
     font-size: 1rem;
@@ -32,10 +34,25 @@
 
 }
 
+/* Memos component styling */
+.memoCont{
+    width: 50%;
+}
+.memoCont h2{
+    text-align: center;
+
+}
 .memos{
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
     flex-wrap: wrap;
+}
+
+@media (max-width:920px){
+
+    .memoCont{
+        width: 100%;
+    }
 }

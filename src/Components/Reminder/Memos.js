@@ -4,8 +4,8 @@ import Memo from './Memo'
 import classes from './Memo.module.css'
 const Memos = () => {
   return (
-    <Card maxWidth='50%' maxHeight='100vh' minWidth='50%'>
-    <h3>Remniders</h3>
+    <div className={classes.memoCont}>
+    <h2>Remniders</h2>
     <div className={classes.memos}>
 
         <Memo/> 
@@ -14,7 +14,7 @@ const Memos = () => {
         <Memo/> 
     </div>
 
-    </Card> 
+    </div> 
   )
 }
 
