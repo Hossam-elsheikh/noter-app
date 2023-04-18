@@ -1,0 +1,41 @@
+.memo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #454545;
+    padding: 1rem;
+    padding-left: 2rem;
+    border-radius: .5rem;
+    position: relative;
+}
+.memo h3 {
+    font-size: 1rem;
+}
+.memo p {
+    font-size: .7rem;
+}
+.trash{
+    position: absolute;
+    top: -.5rem;
+    right: .5rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.trash:hover{
+    transform: scale(1.2);
+    transition: all .3s ease-in-out;
+
+}
+.bell{
+    position: absolute;
+    left: -1.5rem;
+
+}
+
+.memos{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}

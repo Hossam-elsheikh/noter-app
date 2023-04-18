@@ -1,0 +1,67 @@
+.event{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.icon i {
+    font-size: 4rem;
+}
+.txt{
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+}
+.txt h3, .txt h4{
+    color: white;
+}
+.txt h4 {
+    font-size: .7rem;
+    font-weight: 300;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    background-color: #454545;
+    padding: .5rem;
+    border-radius: .5rem;
+    position: relative;
+}
+.details h3{
+    font-size: 1rem;
+    color: white;
+
+}
+.details p {
+    font-size: .6rem;
+    color: white;
+
+}
+.trash {
+    background-color: white;
+    width: fit-content;
+    padding: .2rem;
+    border-radius: .3rem;
+    font-size: .7rem;
+    position: absolute;
+    right: 0;
+    top: -.5rem;
+    cursor: pointer;
+    border: .5px solid #454545;
+    transition: all .3s ease-in-out;
+
+}
+.trash:hover {
+   transform: scale(1.2);
+   transition: all .3s ease-in-out;
+}
