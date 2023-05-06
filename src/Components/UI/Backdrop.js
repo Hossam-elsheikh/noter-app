@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./Backdrop.module.css";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { showSideBar } from "../Main/SideBarSlice";
@@ -9,7 +8,7 @@ const Backdrop = () => {
   return (
     <div
     onClick={()=> dispatch(showSideBar())}
-      className={classes.backdrop}
+      className='backdrop'
       style={showBackDrop.isShown ? { display: "block" } : { display: "none" }}
     ></div>
   );

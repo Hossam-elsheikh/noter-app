@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import NoteForm from "./NoteForm";
 import classes from "./Notes.module.css";
 import Note from "./Note";
 import Container from "../UI/Container";
@@ -11,7 +10,6 @@ const Notes = () => {
   return (
     <Container>
       <div className={classes.cont}>
-        <NoteForm />
         <div className={classes.notes}>
           {!filter.active
             ? notes.map((e) => (
