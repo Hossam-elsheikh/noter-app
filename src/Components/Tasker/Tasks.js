@@ -1,25 +1,17 @@
-import React from 'react'
-import TodoList from './TodoCard';
-import Card from '../UI/Card';
-import Container from '../UI/Container';
-import { dummyTasks } from './DummyData';
+import React from "react";
+import Todo from "./TodoCard";
+import Container from "../UI/Container";
+import { useSelector } from "react-redux";
 const Tasks = () => {
-
-  
-  const map= dummyTasks.map((item)=> 
-  <TodoList key={item.id} data={item} /> 
-  
-  )
+  const tasks = useSelector((state) => state.tasks.tasks);
 
   return (
- <Container>
-    {map}
- </Container>
-     
+    <Container gap="3rem">
+      {tasks.map((item) => (
+        <Todo key={item.id} data={item} />
+      ))}
+    </Container>
+  );
+};
 
-
-  )
-
-}
-
-export default Tasks
+export default Tasks;

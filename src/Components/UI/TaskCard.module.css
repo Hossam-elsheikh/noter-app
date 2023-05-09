@@ -1,0 +1,64 @@
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: white;
+  min-width: 30%;
+  border-radius: .5rem;
+  height: fit-content;
+  box-shadow: 0 1px 5px 2px rgb(221, 218, 218);
+  position: relative;
+}
+.tasks ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid gray;
+}
+.tasks li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transform: scale(0);
+  animation: popup 0.3s ease-in-out 0.1s forwards;
+  position: relative;
+}
+
+.tasks input {
+  background-color: white;
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+.tasks input:focus {
+  outline: none;
+}
+.delete_card {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    cursor: pointer;
+    background-color: #793232;
+    color: white;
+    box-shadow: 0 1px 5px 0 gray;
+    padding: .3rem;
+    border-radius: 50%;
+  }
+
+  .delete_task{
+    position: absolute;
+    left: -2.2rem;
+    color: #793232;
+    cursor: pointer
+  }
+@keyframes popup {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

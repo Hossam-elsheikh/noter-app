@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBell,
   faCalendar,
+  faCheckSquare,
   faNoteSticky,
   faPlusCircle,
 } from "@fortawesome/free-solid-svg-icons";
@@ -14,16 +15,18 @@ const Add = (props) => {
   const dispatch = useDispatch()
   const icons = [
     { name: "note", icon: faNoteSticky },
+    { name: "task", icon: faCheckSquare },
     { name: "event", icon: faCalendar },
     { name: "reminder", icon: faBell },
   ];
+ 
   return (
     <div className={classes.add}>
       <div className={classes.list}>
         <ul>
           {showIcons &&
             icons.map((i) => (
-              <li>
+              <li key={Math.round(Math.random()*234)}>
                 <FontAwesomeIcon
                   onClick={() => {
                     setShowIcons(!showIcons);

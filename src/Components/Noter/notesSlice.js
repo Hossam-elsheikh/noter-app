@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { dummyNotes } from "./DummyData";
+import { colors } from "./DummyData";
 const NullState = {
   notes: dummyNotes,
   tags: [],
@@ -76,6 +77,12 @@ export const notesSlice = createSlice({
       state.filter.active = false;
       localStorage.setItem("notes", JSON.stringify(state));
     },
+    changeColor: (state,action) =>{
+      const noteIndex = state.notes.findIndex((e)=> e.id === action.payload)
+      state.notes[noteIndex].color = colors[Math.round(Math.random()* 30)]
+      localStorage.setItem("notes", JSON.stringify(state));
+
+    }
   },
 });
 export const {
@@ -85,5 +92,6 @@ export const {
   editTitle,
   setFilter,
   clearFilter,
+  changeColor
 } = notesSlice.actions;
 export default notesSlice.reducer;

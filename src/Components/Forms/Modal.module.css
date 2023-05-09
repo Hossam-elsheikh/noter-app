@@ -7,11 +7,15 @@
     margin: 10% 25%;
     border-radius: 1rem;
     box-shadow: 0 1px 5px 0 gray;
-   
     animation: slideup .3s ease-in-out forwards;
 }
 
-
+@media (max-width:776px){
+    .modal{
+        width:96%;
+        margin: 10% 2% 
+    }
+}
 @keyframes slideup {
     0%{
         transform: scale(0);

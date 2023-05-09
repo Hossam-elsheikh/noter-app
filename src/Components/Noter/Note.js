@@ -1,19 +1,36 @@
 import Card from "../UI/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch } from "react-redux";
+import { faPalette, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteNote } from "./notesSlice";
-import { editNote, editTitle } from "./notesSlice";
+import { editNote, editTitle, changeColor } from "./notesSlice";
 import classes from "./Note.module.css";
 import { configureDate } from "./dateConfig";
+import Swal from "sweetalert2";
 
 const Note = ({ title, note, id, tag }) => {
   const dispatch = useDispatch();
- 
-  const currentDate = configureDate()
+  const notes = useSelector((state) => state.notes.notes);
+  const currNote = notes.filter((n) => n.id === id);
+  const currentDate = configureDate();
   const deleteNoteHandler = () => {
-    const confirmDeletion = window.confirm(`do you want to delete ${title.trim().length !== 0 ? title : '"Untitled"'} note`)
-    if(confirmDeletion)dispatch(deleteNote(id));
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'}).then((result) => {
+        if (result.isConfirmed) {
+          dispatch(deleteNote(id));
+          Swal.fire(
+            'Deleted!',
+            'Your Note has been deleted.',
+            'success'
+          )
+        }
+      })
   };
   const onTitleChangeHandler = (e) => {
     dispatch(editTitle({ id, title: e.currentTarget.textContent }));
@@ -21,9 +38,11 @@ const Note = ({ title, note, id, tag }) => {
   const onNoteChangeHandler = (e) => {
     dispatch(editNote({ id, note: e.currentTarget.textContent }));
   };
-
+  const changeColorHandler = () => {
+    dispatch(changeColor(id))
+  };
   return (
-    <Card>
+    <Card backgroundColor={currNote[0].color}>
       <div className={classes.txt}>
         <h3 contentEditable onBlur={onTitleChangeHandler}>
           {title}
@@ -39,6 +58,12 @@ const Note = ({ title, note, id, tag }) => {
           <p>{tag}</p>
         </div>
         <div className={classes.icons}>
+          <FontAwesomeIcon
+            icon={faPalette}
+            size="sm"
+            title="Change color"
+            onClick={changeColorHandler}
+          />
           <FontAwesomeIcon
             icon={faTrash}
             onClick={deleteNoteHandler}

@@ -1,4 +1,3 @@
-
 .form form {
     display: flex;
     flex-direction: column;
@@ -31,7 +30,7 @@ justify-content: space-between;
 .btn button{
     border: none;
     padding: .5rem .6rem;
-    background-color: #75EB81;
+    background-color: #359b3f;
     border-radius: .5rem;
     color: white;
     cursor: pointer;

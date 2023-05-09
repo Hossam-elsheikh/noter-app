@@ -1,9 +1,10 @@
 .add{
     position: absolute;
-    right: 1rem;
-    bottom: 1rem;
+    right: 2rem;
+    bottom: 2rem;
     display: flex;
     flex-direction: column;
+    animation: show 1s ease-in-out 1;
 }
 
 .plus{
@@ -52,5 +53,21 @@
     }
     100%{
         opacity: 100%;
+    }
+}
+@keyframes show {
+    0%{
+        right: 2rem;
+    bottom: 2rem;
+    transform: scale(1);
+    }
+    50%{
+    bottom: 5rem;
+    transform: scale(1.5);
+    }
+    100%{
+        right: 2rem;
+    bottom: 2rem;
+    transform: scale(1);
     }
 }

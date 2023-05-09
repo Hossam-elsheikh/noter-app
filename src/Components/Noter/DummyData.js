@@ -23,6 +23,16 @@ export const dummyNotes =[
     
     Function Borrowing : a way for an object to use the methods of another object without redefining that same method. In JavaScript, we can reuse the method of a function on a different object other than the object it was defined on.`, id: "sam2" },
   ]
+export const dummyTasks = [{name:'Today',id:'123', tasks:[
+  {title:'do Homework', id :23, completed: false},
+  {title:'call Ahmed', id :12, completed: true},
+  {title:'visit Mom', id :44, completed: false},
+]},
+{name:'Tomorrow',id:'1234', tasks:[
+  {title:'finish project', id :223, completed: false},
+  {title:'Buy some pens', id :142, completed: true},
+  {title:'walk jack the Dog', id :444, completed: false},
+]}]
 export const colors = [
  
   '#f3f489',
