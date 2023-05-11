@@ -7,7 +7,8 @@ import { editNote, editTitle, changeColor } from "./notesSlice";
 import classes from "./Note.module.css";
 import { configureDate } from "./dateConfig";
 import Swal from "sweetalert2";
-
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 const Note = ({ title, note, id, tag }) => {
   const dispatch = useDispatch();
   const notes = useSelector((state) => state.notes.notes);
@@ -58,18 +59,24 @@ const Note = ({ title, note, id, tag }) => {
           <p>{tag}</p>
         </div>
         <div className={classes.icons}>
+        <Tippy content='change color'>
+
           <FontAwesomeIcon
             icon={faPalette}
             size="sm"
-            title="Change color"
+           
             onClick={changeColorHandler}
           />
+        </Tippy>
+        <Tippy content='delete'>
+
           <FontAwesomeIcon
             icon={faTrash}
             onClick={deleteNoteHandler}
             size="sm"
-            title="delete"
+           
           />
+        </Tippy>
         </div>
       </div>
     </Card>

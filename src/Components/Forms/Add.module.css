@@ -6,7 +6,13 @@
     flex-direction: column;
     animation: show 1s ease-in-out 1;
 }
-
+@media (max-width:667px) {
+    .add{
+        bottom: 4rem;
+        animation: mob 1s ease-in-out 1;
+    }
+    
+}
 .plus{
     color: rgb(29, 148, 29);
     transition: all .3s ease-in-out;
@@ -57,7 +63,6 @@
 }
 @keyframes show {
     0%{
-        right: 2rem;
     bottom: 2rem;
     transform: scale(1);
     }
@@ -66,8 +71,21 @@
     transform: scale(1.5);
     }
     100%{
-        right: 2rem;
     bottom: 2rem;
+    transform: scale(1);
+    }
+}
+@keyframes mob {
+    0%{
+    bottom: 4rem;
+    transform: scale(1);
+    }
+    50%{
+    bottom: 6rem;
+    transform: scale(1.5);
+    }
+    100%{
+    bottom: 4rem;
     transform: scale(1);
     }
 }

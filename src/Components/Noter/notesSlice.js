@@ -6,7 +6,7 @@ const NullState = {
   tags: [],
   filter: { active: false, notes: [] },
 };
-const initialState = JSON.parse(localStorage.getItem('notes')) || NullState
+const initialState = JSON.parse(localStorage.getItem("notes")) || NullState;
 export const notesSlice = createSlice({
   name: "notes",
   initialState,
@@ -77,12 +77,25 @@ export const notesSlice = createSlice({
       state.filter.active = false;
       localStorage.setItem("notes", JSON.stringify(state));
     },
-    changeColor: (state,action) =>{
-      const noteIndex = state.notes.findIndex((e)=> e.id === action.payload)
-      state.notes[noteIndex].color = colors[Math.round(Math.random()* 30)]
+    changeColor: (state, action) => {
+      const noteIndex = state.notes.findIndex((e) => e.id === action.payload);
+      state.notes[noteIndex].color = colors[Math.round(Math.random() * 30)];
       localStorage.setItem("notes", JSON.stringify(state));
-
-    }
+    },
+    searchFilter: (state, action) => {
+      if (action.payload.val !== "") {
+        state.filter.active = true;
+        state.filter.notes = state.notes.filter(
+          (note) =>
+            note.title
+              .toUpperCase()
+              .includes(action.payload.val.toUpperCase()) ||
+            note.note.toUpperCase().includes(action.payload.val.toUpperCase())
+        );
+      } else {
+        state.filter.active = false;
+      }
+    },
   },
 });
 export const {
@@ -92,6 +105,7 @@ export const {
   editTitle,
   setFilter,
   clearFilter,
-  changeColor
+  changeColor,
+  searchFilter,
 } = notesSlice.actions;
 export default notesSlice.reducer;

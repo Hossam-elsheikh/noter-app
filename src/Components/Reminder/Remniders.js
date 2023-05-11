@@ -6,8 +6,9 @@ import Memos from './Memos'
 const Remniders = () => {
   return (
     <Container>
-      <Events/>
-      <Memos/>
+    <h2>Coming Soon</h2>
+      {/* <Events/> */}
+      {/* <Memos/> */}
     </Container>
   )
 }

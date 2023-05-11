@@ -10,33 +10,37 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { setActiveForm } from "./formSlice";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 const Add = (props) => {
   const [showIcons, setShowIcons] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const icons = [
     { name: "note", icon: faNoteSticky },
     { name: "task", icon: faCheckSquare },
-    { name: "event", icon: faCalendar },
-    { name: "reminder", icon: faBell },
+    // { name: "event", icon: faCalendar },
+    // { name: "reminder", icon: faBell },
   ];
- 
+
   return (
     <div className={classes.add}>
       <div className={classes.list}>
         <ul>
           {showIcons &&
             icons.map((i) => (
-              <li key={Math.round(Math.random()*234)}>
-                <FontAwesomeIcon
-                  onClick={() => {
-                    setShowIcons(!showIcons);
-                    props.onShowModal();
-                    dispatch(setActiveForm(i.name))
-                  }}
-                  className={classes.icon}
-                  icon={i.icon}
-                  size="lg"
-                />
+              <li key={Math.round(Math.random() * 234)}>
+                <Tippy content={`add ${i.name}`}>
+                  <FontAwesomeIcon
+                    onClick={() => {
+                      setShowIcons(!showIcons);
+                      props.onShowModal();
+                      dispatch(setActiveForm(i.name));
+                    }}
+                    className={classes.icon}
+                    icon={i.icon}
+                    size="lg"
+                  />
+                </Tippy>
               </li>
             ))}
 

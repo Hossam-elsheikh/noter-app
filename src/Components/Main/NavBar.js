@@ -5,8 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { showSideBar } from "./SideBarSlice";
+import { searchFilter } from "../Noter/notesSlice";
+import { useLocation } from "react-router-dom";
 const NavBar = () => {
   const dispatch = useDispatch()
+  const location = useLocation()
+  console.log(location.pathname)
+  const filterHandler=(e)=>{
+    const val = e.target.value
+    dispatch(searchFilter({val}))
+  }
   return (
     <div className={classes.nav}>
       <div className={classes.logo}>
@@ -15,7 +23,7 @@ const NavBar = () => {
       </div>
       <h1>Noter</h1>
       </div>
-      <SearchBar txt="Search Notes" />
+      {location.pathname === '/' && <SearchBar txt="Search Notes" onChange={filterHandler}/>}
     </div>
   );
 };
