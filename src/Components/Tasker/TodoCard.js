@@ -16,19 +16,23 @@ const TodoCard = ({ data }) => {
     completed: false,
   };
   const [newTask, setNewTask] = useState(newTaskInit);
-
+const addTask =()=>{
+  dispatch(
+    addNewTask({
+      id: data.id,
+      task: newTask,
+    })
+  );
+  setNewTask(newTaskInit);
+}
   const enterHandler = (e) => {
     if (e.key === "Enter") {
-      console.log(data.id);
-      dispatch(
-        addNewTask({
-          id: data.id,
-          task: newTask,
-        })
-      );
-      setNewTask(newTaskInit);
+    addTask()
     }
   };
+  const submitTaskHandler =()=>{
+    addTask()
+  }
   const deleteCardHandler = () => {
     Swal.fire({
       title: 'Are you sure?',
@@ -99,6 +103,8 @@ const TodoCard = ({ data }) => {
           </li>
         ))}
       </ul>
+      <div className={classes.add}>
+
       <input
         type="text"
         value={newTask.title}
@@ -112,6 +118,8 @@ const TodoCard = ({ data }) => {
           })
         }
       />
+      <button onClick={submitTaskHandler}>add</button>
+      </div>
     </TaskCard>
   );
 };

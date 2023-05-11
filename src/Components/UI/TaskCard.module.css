@@ -67,3 +67,16 @@
     transform: scale(1);
   }
 }
+
+.add{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.add button{
+  padding: .2rem 1rem;
+  background-color: rgb(36, 126, 36);
+  color: white;
+  border-radius: 1rem; cursor: pointer;
+  border: none;
+}
