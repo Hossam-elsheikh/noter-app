@@ -9,4 +9,5 @@
 
 ### Delete
 ![](https://github.com/Hossam-elsheikh/noter-app/blob/main/gifs/delete.gif)
-### mobile preview
+
+## Reminder Coming Soon
